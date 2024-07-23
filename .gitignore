@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Publish/av_libglesv2.dll
+/Publish/EMT Estimator.exe
+/Publish/EMT Estimator.pdb
+/Publish/libHarfBuzzSharp.dll
+/Publish/libSkiaSharp.dll
