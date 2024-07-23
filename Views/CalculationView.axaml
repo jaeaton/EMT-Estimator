@@ -1,0 +1,78 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:vm="clr-namespace:ViewModels"
+			 mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="600"
+             x:Class="Views.CalculationView"
+			 x:DataType="vm:DataViewModel">
+	
+	<StackPanel>
+		
+		<TextBlock Text="Estimated Maximum Tension Calculator" FontSize="20" Margin="3"/>
+		<TextBlock Text="From UNOLS RVSS Appendix A" FontStyle="Italic" Margin="3"/>
+		<StackPanel Margin="1">
+			<RadioButton Content="EMT at Termination" Margin="5,2,5,2" GroupName="EMT"/>
+			<RadioButton IsChecked="{Binding Cable}" Content="EMT at Head Sheave/Winch" Margin="5,2,5,2" GroupName="EMT"/> 
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1" IsVisible="{Binding Cable}">
+			<TextBlock Text="Cable Air Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding CableWeightAir}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1" IsVisible="{Binding Cable}">
+			<TextBlock Text="Cable Water Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding CableWeightWater}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1">
+			<TextBlock Text="Instrument Air Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding InstrumentWeightAir}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1">
+			<TextBlock Text="Instrument Water Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding InstrumentWeightWater}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1">
+			<TextBlock Text="Sample Air Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding SampleWeightAir}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1">
+			<TextBlock Text="Sample Water Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding SampleWeightWater}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1">
+			<TextBlock Text="Instrument Frontal Area" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding InstrumentArea}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="in^2" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1">
+			<TextBlock Text="Instrument Drag Coefficient" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding CoefficientOfDrag}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1">
+			<TextBlock Text="Velocity" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding InstrumentVelocity}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="m/s" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1">
+			<TextBlock Text="Pull Out Tension" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding PullOutTension}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+		</StackPanel>
+		<Line Fill="Black" Stroke="Black" Height="5" />
+		<Border BorderBrush="Red" BorderThickness="2">
+			<StackPanel Orientation="Horizontal" Margin="1,10,1,10" >
+			<TextBlock Text="Calculated EMT" FontWeight="Bold" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBlock Text="{Binding EstimatedMaximumTension}" FontWeight="Bold"  VerticalAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+		</StackPanel>
+		</Border>
+		
+	</StackPanel>
+</UserControl>
