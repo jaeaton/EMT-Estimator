@@ -8,7 +8,9 @@
         x:Class="Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="EMT_Estimator">
+        Title="EMT Estimator"
+		Height="600"
+		Width="400">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
