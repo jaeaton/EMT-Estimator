@@ -11,6 +11,12 @@
             Calculate();
         }
         [ObservableProperty]
+        private string cableLength = string.Empty;
+        partial void OnCableLengthChanged(string value)
+        {
+            Calculate();
+        }
+        [ObservableProperty]
         private string cableWeightAir = string.Empty;
         partial void OnCableWeightAirChanged(string value)
         {

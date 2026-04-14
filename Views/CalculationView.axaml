@@ -16,14 +16,19 @@
 			<RadioButton IsChecked="{Binding Cable}" Content="EMT at Head Sheave/Winch" Margin="5,2,5,2" GroupName="EMT"/> 
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1" IsVisible="{Binding Cable}">
+			<TextBlock Text="Deployed Cable Length" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
+			<TextBox Text="{Binding CableLength}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
+			<TextBlock Text="m" VerticalAlignment="Center"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="1" IsVisible="{Binding Cable}">
 			<TextBlock Text="Cable Air Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding CableWeightAir}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+			<TextBlock Text="lbf/kft" VerticalAlignment="Center"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1" IsVisible="{Binding Cable}">
 			<TextBlock Text="Cable Water Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding CableWeightWater}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+			<TextBlock Text="lbf/kft" VerticalAlignment="Center"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1">
 			<TextBlock Text="Instrument Air Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>

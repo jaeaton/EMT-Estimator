@@ -15,12 +15,18 @@
         {
             double airCableWeight = 0;
             double waterCableWeight = 0;
+            double lengthCable = 0;
             double rho = 63.677; //Density of Seawater in lbf/ft^3
             double g = 0.75; //acceleration due to heave, 0.75 per ABS
             double convertMtoFt = 3.281; //Conversion factor for m/s to ft/s
+            double convertMtoKft = convertMtoFt/1000; //Conversion factor for m to kft
             double convertFtToIn = 12; //conversion from ft to in
             if (data.Cable)
             {
+                if(!double.TryParse(data.CableLength, out lengthCable))
+                {
+                    lengthCable = 0;
+                }   
                 if (!double.TryParse(data.CableWeightAir, out airCableWeight))
                 {
                     airCableWeight = 0;
@@ -64,10 +70,10 @@
             }
             velocity = velocity * convertMtoFt;
             areaInstrument = areaInstrument /( convertFtToIn * convertFtToIn);
-            double staticLoad = waterCableWeight + waterInstrumentWeight + waterSampleWeight;
+            double staticLoad = waterCableWeight * lengthCable * convertMtoKft + waterInstrumentWeight + waterSampleWeight;
             double transientLoad = tensionPullOut;
             double quasiStaticLoad = (areaInstrument*cod*rho*velocity*velocity)/(2*32.174);
-            double dynamicLoad = (airCableWeight + airInstrumentWeight + airSampleWeight)*g;
+            double dynamicLoad = (airCableWeight*lengthCable * convertMtoKft + airInstrumentWeight + airSampleWeight)*g;
             double total = staticLoad + transientLoad + quasiStaticLoad + dynamicLoad;
 
             data.EstimatedMaximumTension = total.ToString();
