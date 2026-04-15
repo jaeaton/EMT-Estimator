@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:vm="clr-namespace:ViewModels"
-			 mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="600"
+			 mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="600"
              x:Class="Views.CalculationView"
 			 x:DataType="vm:DataViewModel">
 	
@@ -18,42 +18,50 @@
 		<StackPanel Orientation="Horizontal" Margin="1" IsVisible="{Binding Cable}">
 			<TextBlock Text="Deployed Cable Length" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding CableLength}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="m" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="m" VerticalAlignment="Center"/>-->
+			 <ComboBox SelectedValue="{Binding CableLengthUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding PayoutUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1" IsVisible="{Binding Cable}">
 			<TextBlock Text="Cable Air Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding CableWeightAir}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="lbf/kft" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="lbf/kft" VerticalAlignment="Center"/>-->
+			 <ComboBox SelectedValue="{Binding CableWeightAirUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding WeightPerLengthUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1" IsVisible="{Binding Cable}">
 			<TextBlock Text="Cable Water Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding CableWeightWater}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="lbf/kft" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="lbf/kft" VerticalAlignment="Center"/>-->
+			 <ComboBox SelectedValue="{Binding CableWeightWaterUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding WeightPerLengthUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1">
 			<TextBlock Text="Instrument Air Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding InstrumentWeightAir}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="lbf" VerticalAlignment="Center"/>-->
+			 <ComboBox SelectedValue="{Binding InstrumentWeightAirUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding TensionUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1">
 			<TextBlock Text="Instrument Water Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding InstrumentWeightWater}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="lbf" VerticalAlignment="Center"/>-->
+			 <ComboBox SelectedValue="{Binding InstrumentWeightWaterUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding TensionUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1">
 			<TextBlock Text="Sample Air Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding SampleWeightAir}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="lbf" VerticalAlignment="Center"/>-->
+			 <ComboBox SelectedValue="{Binding SampleWeightAirUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding TensionUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1">
 			<TextBlock Text="Sample Water Weight" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding SampleWeightWater}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="lbf" VerticalAlignment="Center"/>-->
+			 <ComboBox SelectedValue="{Binding SampleWeightWaterUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding TensionUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1">
 			<TextBlock Text="Instrument Frontal Area" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding InstrumentArea}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="in^2" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="in^2" VerticalAlignment="Center"/>-->
+			 <ComboBox SelectedValue="{Binding InstrumentAreaUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding InstrumentAreaUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1">
 			<TextBlock Text="Instrument Drag Coefficient" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
@@ -63,19 +71,22 @@
 		<StackPanel Orientation="Horizontal" Margin="1">
 			<TextBlock Text="Velocity" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding InstrumentVelocity}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="m/s" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="m/s" VerticalAlignment="Center"/>-->
+			 <ComboBox SelectedValue="{Binding InstrumentVelocityUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding SpeedUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" Margin="1">
 			<TextBlock Text="Pull Out Tension" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBox Text="{Binding PullOutTension}" VerticalContentAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="lbf" VerticalAlignment="Center"/>-->
+			<ComboBox SelectedValue="{Binding PullOutTensionUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding TensionUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		<Line Fill="Black" Stroke="Black" Height="5" />
 		<Border BorderBrush="Red" BorderThickness="2">
 			<StackPanel Orientation="Horizontal" Margin="1,10,1,10" >
 			<TextBlock Text="Calculated EMT" FontWeight="Bold" VerticalAlignment="Center" Width="200" Margin="5,2,5,2"/>
 			<TextBlock Text="{Binding EstimatedMaximumTension}" FontWeight="Bold"  VerticalAlignment="Center" Width="70" Margin="5,2,5,2"/>
-			<TextBlock Text="lbf" VerticalAlignment="Center"/>
+			<!--<TextBlock Text="lbf" VerticalAlignment="Center"/>-->
+			<ComboBox SelectedValue="{Binding EstimatedMaximumTensionUnit}" VerticalAlignment="Center" Margin="5,2,5,2" Width="100" ItemsSource="{Binding TensionUnitList}" SelectedIndex="0"/>
 		</StackPanel>
 		</Border>
 		

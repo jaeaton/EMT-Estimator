@@ -68,13 +68,29 @@
             {
                 tensionPullOut = 0;
             }
+
+            //Check if velocity needs to be converted
             velocity = velocity * convertMtoFt;
+
+            //Check if area needs to be converted
             areaInstrument = areaInstrument /( convertFtToIn * convertFtToIn);
+
+            //Check it water weights & length need to be converted
             double staticLoad = waterCableWeight * lengthCable * convertMtoKft + waterInstrumentWeight + waterSampleWeight;
+
+            //Check if pull out tension needs to be converted
             double transientLoad = tensionPullOut;
+
+            //Calculate quasi static load in lbf using velocity and area
             double quasiStaticLoad = (areaInstrument*cod*rho*velocity*velocity)/(2*32.174);
+
+            //Check if air weights & length need to be converted
             double dynamicLoad = (airCableWeight*lengthCable * convertMtoKft + airInstrumentWeight + airSampleWeight)*g;
+
+            //Calculate total tension
             double total = staticLoad + transientLoad + quasiStaticLoad + dynamicLoad;
+
+            //Check if total tension needs to be converted
 
             data.EstimatedMaximumTension = total.ToString();
         }

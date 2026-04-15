@@ -78,6 +78,71 @@
         }
         [ObservableProperty]
         private string estimatedMaximumTension = string.Empty;
+        [ObservableProperty]
+        private string cableLengthUnit = string.Empty;
+        [ObservableProperty]
+        private string cableWeightAirUnit = string.Empty;
+        [ObservableProperty]
+        private string cableWeightWaterUnit = string.Empty;
+        [ObservableProperty]
+        private string instrumentWeightAirUnit = string.Empty;
+        [ObservableProperty]
+        private string instrumentWeightWaterUnit = string.Empty;
+        [ObservableProperty]
+        private string sampleWeightAirUnit = string.Empty;
+        [ObservableProperty]
+        private string sampleWeightWaterUnit = string.Empty;
+        [ObservableProperty]
+        private string instrumentAreaUnit = string.Empty;
+        [ObservableProperty]
+        private string coefficientOfDragUnit = string.Empty;
+        [ObservableProperty]
+        private string instrumentVelocityUnit = string.Empty;
+        [ObservableProperty]
+        private string pullOutTensionUnit = string.Empty;
+        [ObservableProperty]
+        private string estimatedMaximumTensionUnit = string.Empty;
+        [ObservableProperty]
+        private List<string> speedUnitList = new List<string>
+                                                            {
+                                                                "m/min",
+                                                                "ft/min",
+                                                                "kph",
+                                                                "mph",
+                                                                "m/sec"
+                                                            };
+        [ObservableProperty]
+        private List<string> payoutUnitList = new List<string>
+                                                            {
+                                                                "m",
+                                                                "ft",
+                                                                "km"
+                                                            };
+        [ObservableProperty]
+        private List<string> tensionUnitList = new List<string>
+                                                            {
+                                                                "lbf",
+                                                                "kg",
+                                                                "kip",
+                                                                "N",
+                                                                "Short Ton",
+                                                                "Long Ton",
+                                                                "Tonne"
+                                                            };
+        [ObservableProperty]
+        private List<string> instrumentAreaUnitList = new List<string>
+                                                            {
+                                                                "in^2",
+                                                                "ft^2",
+                                                                "cm^2",
+                                                                "m^2"
+                                                            };
+        [ObservableProperty]
+        private List<string> weightPerLengthUnitList = new List<string>
+                                                            {
+                                                                "lbf/kft",
+                                                                "kg/km"
+                                                            };
 
         public static void Calculate()
         {
