@@ -569,5 +569,132 @@
             return converted;
         }
 
+        //Weight per length conversion
+        public float ConvertWeightPerLength(float weightperlength, string unit)
+        {
+            float converted;
+            switch (unit)
+            {
+                case "kg/m":
+                    converted = ConvertFromKgPerMeter(weightperlength, unit);
+                    break;
+                case "lb/ft":
+                    converted = ConvertFromLbPerFt(weightperlength, unit);
+                    break;
+                default:
+                    converted = weightperlength;
+                    break;
+            }
+            return converted;
+        }
+        public float ConvertFromKgPerMeter(float weightperlength, string WeightPerLengthConversionUnit)
+        {
+            float converted;
+            switch (WeightPerLengthConversionUnit)
+            {
+                case "lb/ft":
+                    converted = (float)(weightperlength * 0.671969);
+                    break;
+                default:
+                    converted = weightperlength;
+                    break;
+            }
+            return converted;
+        }
+        public float ConvertFromLbPerFt(float weightperlength, string WeightPerLengthConversionUnit)
+        {
+            float converted;
+            switch (WeightPerLengthConversionUnit)
+            {
+                case "kg/m":
+                    converted = (float)(weightperlength * 1.48816);
+                    break;
+                default:
+                    converted = weightperlength;
+                    break;
+            }
+            return converted;
+        }
+
+        //Area conversion
+        public float ConvertArea(float area, string unit)
+        {
+            float converted;
+            switch (unit)
+            {
+                case "m^2":
+                    converted = ConvertFromSquareMeters(area, unit);
+                    break;
+                case "ft^2":
+                    converted = ConvertFromSquareFeet(area, unit);
+                    break;
+                case "cm^2":
+                    converted = ConvertFromSquareCentimeters(area, unit);
+                    break;
+                case "in^2":
+                    converted = ConvertFromSquareInches(area, unit);
+                    break;
+                default:
+                    converted = area;
+                    break;
+            }
+            return converted;
+        }
+        public float ConvertFromSquareMeters(float area, string AreaConversionUnit)
+        {
+            float converted;
+            switch (AreaConversionUnit)
+            {
+                case "ft^2":
+                    converted = (float)(area * 10.7639);
+                    break;
+                default:
+                    converted = area;
+                    break;
+            }
+            return converted;
+        }
+        public float ConvertFromSquareFeet(float area, string AreaConversionUnit)
+        {
+            float converted;
+            switch (AreaConversionUnit)
+            {
+                case "m^2":
+                    converted = (float)(area * 0.092903);
+                    break;
+                default:
+                    converted = area;
+                    break;
+            }
+            return converted;
+        }
+        public float ConvertFromSquareCentimeters(float area, string AreaConversionUnit)
+        {
+            float converted;
+            switch (AreaConversionUnit)
+            {
+                case "in^2":
+                    converted = (float)(area * 0.155);
+                    break;
+                default:
+                    converted = area;
+                    break;
+            }
+            return converted;
+        }
+        public float ConvertFromSquareInches(float area, string AreaConversionUnit)
+        {
+            float converted;
+            switch (AreaConversionUnit)
+            {
+                case "cm^2":
+                    converted = (float)(area * 6.4516);
+                    break;
+                default:
+                    converted = area;
+                    break;
+            }
+            return converted;
+        }
     }
 }
